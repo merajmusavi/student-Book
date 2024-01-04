@@ -16,4 +16,8 @@ public class ApiService {
     public void insertStudent(Student student) {
         studentJpaRepo.save(student);
     }
+
+    public Student findUserByEmail(String email) {
+        return studentJpaRepo.findStudentByEmail(email);
+    }
 }

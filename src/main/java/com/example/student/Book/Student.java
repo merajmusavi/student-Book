@@ -24,6 +24,9 @@ public class Student {
             updatable = false
     )
     private Long id;
+    public Student(){
+
+    }
     @Column(
             name = "first_name",
             columnDefinition = "TEXT"
