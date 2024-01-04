@@ -5,6 +5,8 @@ import com.example.student.Book.Student;
 import com.example.student.Book.service.ApiService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class ApiController {
 
@@ -25,6 +27,12 @@ public class ApiController {
     @GetMapping("{email}")
     Student student(@PathVariable String email){
         return apiService.findUserByEmail(email);
+    }
+
+
+    @GetMapping("all")
+    List<Student> allStudents(){
+        return apiService.allStudents();
     }
 
 }

@@ -4,6 +4,8 @@ import com.example.student.Book.Student;
 import com.example.student.Book.StudentJpaRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ApiService {
 
@@ -19,5 +21,9 @@ public class ApiService {
 
     public Student findUserByEmail(String email) {
         return studentJpaRepo.findStudentByEmail(email);
+    }
+
+    public List<Student> allStudents() {
+    return studentJpaRepo.findAll();
     }
 }
