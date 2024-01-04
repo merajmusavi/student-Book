@@ -25,7 +25,8 @@ public class Student {
     )
     private Long id;
     @Column(
-            name = "first_name"
+            name = "first_name",
+            columnDefinition = "TEXT"
     )
     private String firstName;
     @Column(
