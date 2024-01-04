@@ -6,6 +6,7 @@ import com.example.student.Book.service.ApiService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ApiController {
@@ -33,6 +34,13 @@ public class ApiController {
     @GetMapping("all")
     List<Student> allStudents(){
         return apiService.allStudents();
+    }
+
+
+    @DeleteMapping("deleteUser")
+    void deleteUser(@RequestBody Map<String,String> map){
+        apiService.deleteUser(map.get("email"));
+        System.out.println(map.get("email"));
     }
 
 }

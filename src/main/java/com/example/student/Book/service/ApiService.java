@@ -26,4 +26,8 @@ public class ApiService {
     public List<Student> allStudents() {
     return studentJpaRepo.findAll();
     }
+
+   public void deleteUser(String email){
+        studentJpaRepo.deleteUser(email);
+    }
 }
